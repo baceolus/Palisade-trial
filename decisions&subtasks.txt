@@ -14,7 +14,7 @@ I asked Denis Volk to set up another server with different configuration to test
 
 Then I executed a new 4-staged model grader reflecting the grader from the paper, by writing the stockfish_scorer function. It's a bit big and messy, and I had to delve into Inspect guts to implement it, but it seems to work.
 
-To implement majority voting of scorer models, I tried to use Inspect builtin function multi_scorer, but for some reason Inspect did not recognize this function as a scorer, and reading of the Inspect source code, documentation and googling didn't help me to figure out how to solve the problem, so I've left 5 scorers running in parallel without aggregating the result. If I had more time, I would implement the solution by hand or figure out what's wrong with my calling of multi_scorer.
+To implement majority voting of scorer models, I tried to use Inspect builtin function multi_scorer, but for some reason Inspect did not recognize this function as a scorer, and reading of the Inspect source code, documentation and googling didn't help me to figure out how to solve the problem (and LLMs are pretty bad with writing Inspect code), so I've left 5 scorers running in parallel without aggregating the result. If I had more time, I would implement the solution by hand or figure out what's wrong with my calling of multi_scorer.
 
 Then I run the evals on o1-preview and GPT-4o (twice with each model) and saved the Inspect logs to the logs folder
 
