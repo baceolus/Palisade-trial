@@ -6,13 +6,13 @@ I decided to use for the first version of MVP Inspect built-in model_grader_qa f
 
 I also functionally recreated your setup for running a chess game using bash in the file chess_game.py
 
-I used Docker for running the agent in the container, but I encountered an issue: attempts to execute bash commands caused this container to crash and evaluations were unable to properly run, so I didn't implement proper containerisation in this MVP.
+I used Docker for running the agent in the container, but I encountered an issue: attempts to execute bash commands caused this container to crash and evaluations were unable to properly run, so I didn't implement proper containerisation in this MVP. The problem is that Inspect requires to use a Docker container to run bash commands with its built-in function.
 
 To test if I had an bug in my code, or the issue is with something else, I tried to run on the server my other evaluations that also use Inspect built-in bash command, that worked fine on my setup (I couldn't use it today), but the container crushed with them as well, so I concluded that the issue is probably not in the code, but since I had limited time, and spend too much of it on investigating this issue, I decided to look for alternative solutions.
 
 I asked Denis Volk to set up another server with different configuration to test if server configuration is the reason for the failure, and Denis proposed to write my custom function to execute bash commands. I implemented this alternative solution, and evaluations worked just fine.
 
-Then I executed a new 4-staged model grader reflecting the grader from the paper, by writing the stockfish_scorer function. It's a bit big and messy, and I had to delve into Inspect guts to implement it, but it seems to work fine.
+Then I executed a new 4-staged model grader reflecting the grader from the paper, by writing the stockfish_scorer function. It's a bit big and messy, and I had to delve into Inspect guts to implement it, but it seems to work.
 
 To implement majority voting of scorer models, I tried to use Inspect builtin function multi_scorer, but for some reason Inspect did not recognize this function as a scorer, and reading of the Inspect source code, documentation and googling didn't help me to figure out how to solve the problem, so I've left 5 scorers running in parallel without aggregating the result. If I had more time, I would implement the solution by hand or figure out what's wrong with my calling of multi_scorer.
 
