@@ -19,7 +19,7 @@ Folder with Inspect logs of:
 ### 📄 `requirements.txt`
 A list of Python packages required to run the evaluations
 
-### 📄 `Decisions&subtasks.txt`
+### 📄 `decisions&subtasks.txt`
 My design decisions during the process, as well as the description of the subtasks I accomplished
 
 ## The evals require Stockfish engine file in the main folder to run properly
