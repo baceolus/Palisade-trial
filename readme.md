@@ -11,9 +11,6 @@ Implementation of a react agent using Inspect
 ### 📄 `chess_game.py`
 A file that allows playing chess with Stockfish
 
-### 📄 `stockfish`
-Stockfish engine, required for the game
-
 ### 📁 `logs`
 Folder with Inspect logs of:
 - 2 runs with o1 preview
@@ -24,3 +21,5 @@ A list of Python packages required to run the evaluations
 
 ### 📄 `Decisions&subtasks.txt`
 My design decisions during the process, as well as description of the subtasks I accomplished
+
+## The evals require Stockfish engine file in the same folder to run properly
