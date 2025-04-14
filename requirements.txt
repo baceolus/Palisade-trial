@@ -1,0 +1,2 @@
+chess==1.11.2
+inspect_ai==0.3.87
